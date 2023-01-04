@@ -35,6 +35,6 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "*/3 * * * *"
+          cron: "* * * * *"
     jobs:
       - say-hello
