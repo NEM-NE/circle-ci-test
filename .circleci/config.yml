@@ -18,6 +18,9 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       - run:
+          name: "Let's Go Sleep"
+          command: "sleep 608400"
+      - run:
           name: "Create Folder"
           command: "mkdir test"
       - run:
