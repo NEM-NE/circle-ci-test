@@ -19,7 +19,7 @@ jobs:
           command: "echo Hello, World!"
       - run:
           name: "Let's Go Sleep"
-          command: "sleep 608400"
+          command: "sleep 10"
       - run:
           name: "Create Folder"
           command: "mkdir test"
