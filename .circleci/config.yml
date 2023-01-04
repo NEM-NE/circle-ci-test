@@ -15,8 +15,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "Say hello to Context"
+          command: "echo Hello, $MY_NAME !"
       - run:
           name: "Let's Go Sleep"
           command: "sleep 10"
@@ -40,4 +40,7 @@ workflows:
             branches:
               only: circleci-project-setup
     jobs:
-      - say-hello
+      - say-hello:
+          context:
+            - my-context
+
