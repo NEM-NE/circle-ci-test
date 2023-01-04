@@ -14,9 +14,11 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - run:
-          name: "Say hello to Context"
-          command: "echo Hello, $MY_NAME !"
+      - when:
+          condition:
+            equal: [ "sungbin", $MY_NAME ]
+          steps:
+              - run: echo Hello, $MY_NAME !
       - run:
           name: "Let's Go Sleep"
           command: "sleep 10"
@@ -32,13 +34,7 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows: 
-  nightly:
-    triggers:
-      - schedule:
-          cron: "5 * * * *"
-          filters:
-            branches:
-              only: circleci-project-setup
+  main:  
     jobs:
       - say-hello:
           context:
