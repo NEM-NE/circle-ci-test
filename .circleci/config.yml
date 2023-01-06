@@ -19,6 +19,12 @@ jobs:
       - checkout:
           path: ~/<<parameters.path>>
       - run:
+          name: "check working_directory"
+          command: "echo $CIRCLE_WORKING_DIRECTORY"
+      - run:
+          name: "check working_directory"
+          command: "pwd"
+      - run:
           name: "check test.txt"
           command: "cat test.txt"
 
